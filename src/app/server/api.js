@@ -29,6 +29,7 @@ router.post('/register',(req,res)=>{
     d.collection('data').insertOne(obj,(err)=>{
         if(err) throw err
         console.log("data inserted")
+        res.send(JSON.stringify("data inserted"))
     })
 })
 
@@ -50,6 +51,30 @@ router.post('/login',(req,res)=>{
            }
         }
     })
+})
+
+router.post('/file',(req,res)=>{
+    let data=req.body   
+    if(req.body){
+
+    for(let i=0;i<data.length;i++){
+        const dat={
+            sno:data[i]['sno'],
+            drawingnumber:data[i]['drawingnumber'],
+            componentname:data[i]['componentname']
+        }
+
+        d.collection("data").insert([dat],{upsert:true})
+    }
+    res.send(JSON.stringify("Data loaded"))
+}
+
+    else{
+        res.send(JSON.stringify("OOPS there is some error"))
+
+    }
+
+    
 })
 
 

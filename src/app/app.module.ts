@@ -8,11 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './authenticate.service';
 import { ReactiveFormsModule} from '@angular/forms';
+import { UploadComponent } from './upload/upload.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
