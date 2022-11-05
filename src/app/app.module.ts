@@ -9,12 +9,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './authenticate.service';
 import { ReactiveFormsModule} from '@angular/forms';
 import { UploadComponent } from './upload/upload.component';
+import { SquareComponent } from './square/square.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     UploadComponent,
+    SquareComponent,
   ],
   imports: [
     BrowserModule,
