@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataComponent } from './data/data.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdateComponent } from './update/update.component';
 import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"upload",component:UploadComponent},
-  {path:"data",component:DataComponent}
+  {path:"data",component:DataComponent},
+  {path:"update",component:UpdateComponent}
 ];
 
 @NgModule({

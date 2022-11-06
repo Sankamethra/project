@@ -106,6 +106,25 @@ router.post('/getdata',(req,res)=>{
 
 })
 
+router.post('/getupdate',(req,res)=>{
+    let data=req.body
+    let filter={drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}
+    let newobj={$set:{insertlife:data.insertlifenew,rate:data.ratenew}}
+    res.send
+    d.collection("new").updateOne(filter,newobj,(err,dat)=>{
+        if(err){
+            res.send(JSON.stringify("Update error"))
+        }
+        else{
+            d.collection("new").findOne(filter,(err,dat)=>{
+            if (err) throw err
+            res.send(JSON.stringify(dat))
+           }) 
+        }
+    })
+
+})
+
 
 
 module.exports=router

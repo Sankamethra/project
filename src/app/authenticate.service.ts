@@ -30,4 +30,12 @@ export class AuthenticateService {
     console.log(data)
     return this.http.post<any[]>("http://localhost:3000/api/getdata",data)
   }
+
+  getupdate(data:any){
+    console.log(data)
+    return this.http.post<any[]>("http://localhost:3000/api/getupdate",data)
+  }
+
+
+
 }

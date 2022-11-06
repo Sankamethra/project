@@ -1,0 +1,11 @@
+<p>update works!</p>
+drawing num:<input [(ngModel)]="data.drawingnumber" type="text" name="drawingnumber"><br/>
+part name:<input [(ngModel)]="data.partname"  type="text" name="partname"><br/>
+seq name:<input [(ngModel)]="data.sequencename"  type="text" name="sequencename"><br/><br/>
+<h2>get existing collection</h2>
+<button (click)="existdata()">getdata</button>
+<h2>enter update field</h2>
+<!-- dropdown wants to be placed here -->
+Example(insertlife)[new]:<input [(ngModel)]="data.insertlifenew"  type="text" name="insertlife"><br/>
+Example(rate)[new]:<input [(ngModel)]="data.ratenew"  type="text" name="ratenew"><br/>
+<button (click)="update()">Update</button>

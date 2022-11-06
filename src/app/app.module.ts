@@ -10,6 +10,7 @@ import { AuthenticateService } from './authenticate.service';
 import { ReactiveFormsModule} from '@angular/forms';
 import { UploadComponent } from './upload/upload.component';
 import { DataComponent } from './data/data.component';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DataComponent } from './data/data.component';
     LoginComponent,
     UploadComponent,
     DataComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
