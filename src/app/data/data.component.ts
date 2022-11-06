@@ -7,6 +7,7 @@ import { AuthenticateService } from '../authenticate.service';
 })
 export class DataComponent implements OnInit {
   public data:any={}
+  public datas:any=[]
 
   constructor(private auth:AuthenticateService) { }
 
@@ -17,6 +18,8 @@ export class DataComponent implements OnInit {
     console.log(this.data)
     this.auth.getdata(this.data).subscribe((res:any)=>{
       console.log(res)
+      this.datas=res
+
     })
 
   }

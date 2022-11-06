@@ -7,6 +7,8 @@ import { AuthenticateService } from '../authenticate.service';
 })
 export class UpdateComponent implements OnInit {
   public data:any={}
+  public datas:any={}
+  public upddat:any={}
 
   constructor(private auth:AuthenticateService) { }
 
@@ -16,13 +18,13 @@ export class UpdateComponent implements OnInit {
   update(){
     console.log(this.data)
     this.auth.getupdate(this.data).subscribe((res)=>{
-      console.log(res)
+      this.upddat=res
     })
   }
   existdata(){
     console.log(this.data)
     this.auth.getdata(this.data).subscribe((res)=>{
-      console.log(res)
+      this.datas=res
     })
 
   }
