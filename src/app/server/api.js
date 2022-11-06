@@ -109,17 +109,97 @@ router.post('/getdata',(req,res)=>{
 router.post('/getupdate',(req,res)=>{
     let data=req.body
     let filter={drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}
-    let newobj={$set:{insertlife:data.insertlifenew,rate:data.ratenew}}
-    res.send
+    let newobj
+     if(data.drawingnumbernew){
+        newobj={$set:{drawingnumber:data.drawingnumbernew}}
+     }else{
+        if(data.componentnamenew){
+            newobj={$set:{componentname:data.componentnamenew}}
+        }
+        else{
+            if(data.partnamenew){
+                newobj={$set:{partname:data.partnamenew}}
+            }else{
+                if(data.materialnew){ 
+                    newobj={$set:{material:data.materialnew}}                      
+
+                }else{
+                    if(data.sequencenamenew){
+                        newobj={$set:{sequencename:data.sequencenamenew}}
+
+                    }else{
+                        if(data.opnnew){
+                            newobj={$set:{opn:data.opnnew}}
+
+                        }else{
+                            if(data.barnew){
+                                newobj={$set:{bar:data.barnew}}
+
+                            }else{
+                                if(data.insertspecnew){
+                                    newobj={$set:{insertspec:data.insertspecnew}}
+
+                                }else{
+                                    if(data.noofedgenew){
+                                        newobj={$set:{noofedge:data.noofedgenew}}
+
+                                    }else{
+                                        if(data.edgelifenew){
+                                            newobj={$set:{edgelife:data.edgelifenew}}
+
+                                        }else{
+                                            if(data.makenew){
+                                                newobj={$set:{make:data.makenew}}
+
+                                            }else{
+                                                if(data.suppliernew){
+                                                    newobj={$set:{supplier:data.suppliernew}}
+
+                                                }else{
+                                                    if(data.ratenew){
+                                                        newobj={$set:{rate:data.ratenew}}
+
+                                                    }else{
+                                                        if(data.insertlifenew){
+                                                            newobj={$set:{insertlife:data.insertlifenew}}
+
+                                                        }else{
+                                                            if(data.alternateinsertnew){
+                                                                newobj={$set:{alternateinsert:data.alternatenew}}
+
+                                                            }else{
+                                                                if(data.noofedgeforalternativenew){
+                                                                    newobj={$set:{noofedgeforalternative:data.noofedgeforalternativenew}}
+                                                                }else{
+                                                                    
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+     }
+ 
+    // let newobj={$set:{insertlife:data.insertlifenew,rate:data.ratenew}}
     d.collection("new").updateOne(filter,newobj,(err,dat)=>{
         if(err){
-            res.send(JSON.stringify("Update error"))
+            res.send(JSON.stringify("Update error")) 
         }
         else{
             d.collection("new").findOne(filter,(err,dat)=>{
             if (err) throw err
             res.send(JSON.stringify(dat))
-           }) 
+           })  
         }
     })
 
