@@ -47,7 +47,7 @@ router.post('/login',(req,res)=>{
             if(usr.password!==data.password){
                 res.status(401).send('Invalid password')
             }else{
-                res.status(200).send(usr)
+                res.status(200).send("Authentication successful")
             }
            }
         }
@@ -94,6 +94,16 @@ router.post('/file',(req,res)=>{
     }
 
     
+})
+
+router.post('/getdata',(req,res)=>{
+   let data=req.body
+   let obj={drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}
+   d.collection("new").findOne(obj,(err,dat)=>{
+    if (err) throw err
+    res.send(JSON.stringify(dat))
+   })
+
 })
 
 

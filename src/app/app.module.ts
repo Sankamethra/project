@@ -9,21 +9,23 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './authenticate.service';
 import { ReactiveFormsModule} from '@angular/forms';
 import { UploadComponent } from './upload/upload.component';
-import { SquareComponent } from './square/square.component';
+import { DataComponent } from './data/data.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     UploadComponent,
-    SquareComponent,
+    DataComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [AuthenticateService],
   bootstrap: [AppComponent]
