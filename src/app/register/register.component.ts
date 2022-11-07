@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticateService } from '../authenticate.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,7 +10,7 @@ export class RegisterComponent implements OnInit {
   public data:any={}
   public datas:any=[]
 
-  constructor(private auth:AuthenticateService) { }
+  constructor(private auth:AuthenticateService,private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
     this.auth.register(this.data).subscribe((res:any)=>{
       this.datas=res
       console.log(this.datas)
+      this.route.navigate(['/login'])
 
     })
 
