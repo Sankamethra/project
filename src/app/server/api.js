@@ -42,12 +42,12 @@ router.post('/login',(req,res)=>{
         }
         else{
            if(!usr){
-            res.status(401).send('invalid user')
+            res.send(JSON.stringify('invaliduser'))
            }else{
             if(usr.password!==data.password){
-                res.status(401).send('Invalid password')
+                res.send(JSON.stringify('invalidpassword'))
             }else{
-                res.status(200).send(JSON.stringify("Authentication successful"))
+                res.status(200).send(JSON.stringify("validuser"))
             }
            }
         }
@@ -83,7 +83,7 @@ router.post('/file',(req,res)=>{
             
         }
 
-        d.collection("new").insert([dat],{upsert:true})
+        d.collection("new").aggregate([dat],{upsert:true})
     }
     res.send(JSON.stringify("Data loaded"))
 }
