@@ -11,6 +11,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { UploadComponent } from './upload/upload.component';
 import { DataComponent } from './data/data.component';
 import { UpdateComponent } from './update/update.component';
+import { GridComponent } from './grid/grid.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { UpdateComponent } from './update/update.component';
     UploadComponent,
     DataComponent,
     UpdateComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,

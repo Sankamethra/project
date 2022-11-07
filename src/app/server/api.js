@@ -205,6 +205,52 @@ router.post('/getupdate',(req,res)=>{
 
 })
 
+router.post('/grid',(req,res)=>{
+    let data=req.body
+
+
+    for(let i=0;i<data.length;i++){
+        let count=d.collection("new").count()
+        const dat={
+            sno:count+1,
+            drawingnumber:data[i]['drawingnumbernew'],
+            componentname:data[i]['componentnamenew'],
+            partname:data[i]['partnamenew'],
+            material:data[i]['materialnew'],
+            sequencename:data[i]['sequencenamenew'],
+            opn:data[i]['opnnew'],
+            bar:data[i]['barnew'],
+            insertspec:data[i]['insertspecnew'],
+            noofedge:data[i]['noofedgenew'],
+            edgelife:data[i]['edgelifenew'],
+            make:data[i]['makenew'],
+            supplier:data[i]['suppliernew'],
+            rate:data[i]['ratenew'],
+            insertlife:data[i]['insertlifenew'],
+            alternateinsert:data[i]['alternateinsertnew'],
+            noofedgeforalternative:data[i]['noofedgeforalternativenew']
+        }
+
+        d.collection("new").insert([dat],{upsert:true})
+    }
+
+    res.send(JSON.stringify("data inserted"))
+
+
+
+
+
+        
+    
+    
+    // res.send(JSON.stringify(drawingnumber))
+    // d.collection('data').insertOne(obj,(err)=>{
+    //     if(err) throw err
+    //     console.log("data inserted")
+    //     res.send(JSON.stringify("data inserted"))
+    // })
+})
+
 
 
 module.exports=router

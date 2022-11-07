@@ -36,6 +36,12 @@ export class AuthenticateService {
     return this.http.post<any[]>("http://localhost:3000/api/getupdate",data)
   }
 
+  grid(data:any=[]){
+    console.log(data)
+    return this.http.post<any[]>("http://localhost:3000/api/grid",data)
+
+  }
+
 
 
 }
