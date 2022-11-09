@@ -236,7 +236,7 @@ router.post('/grid',(req,res)=>{
             noofedgeforalternative:data[i]['noofedgeforalternativenew']
         }
 
-        d.collection("new").insert([dat],{upsert:true})
+        d.collection("new").insertMany([dat],{upsert:true})
     }
 
     res.send(JSON.stringify("data inserted"))
