@@ -29,9 +29,4 @@ export class UpdateComponent implements OnInit {
 
   }
 
-  selectedTeam = '';
-	onSelected(value:string): void {
-		this.selectedTeam = value;
-	}
-
 }

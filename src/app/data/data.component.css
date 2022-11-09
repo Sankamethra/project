@@ -7,6 +7,12 @@ table,th,td,tr{
     height: 50px;
     text-align: center;
     align-items: center;
+}
 
-
+.box{
+    width: 50%;
+    border: 3px solid rgb(145, 138, 138);
+    border-radius: 25px;
+    padding: 10px 50px, 50px, 50px;
+    margin-left: 400px;
 }

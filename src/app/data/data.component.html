@@ -109,34 +109,6 @@
                                     </div>
                                 </div>
 
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Enter Part Name</h6>
-                                    <br>
-                                    <div>
-                                        <!-- Topbar Search -->
-                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                          <div class="input-group">
-                                               <input  [(ngModel)]="data.partname" type="text" name="partname" class="form-control bg-light border-0 small" placeholder="Enter Here.."  aria-label="Search" aria-describedby="basic-addon2"required><br/>
-                                            </div>
-                                       </form>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Enter Sequence Name</h6>
-                                    <br>
-                                    <div>
-                                        <!-- Topbar Search -->
-                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                          <div class="input-group">
-                                               <input  [(ngModel)]="data.sequencename" type="text" name="sequencename" class="form-control bg-light border-0 small" placeholder="Enter Here.."  aria-label="Search" aria-describedby="basic-addon2"required><br/>
-                                            </div>
-                                       </form>
-                                    </div>
-                                </div>
-
                                 <button (click)="get()" style="margin-left: 670px" type="button" class="btn btn-primary" >
                                     Get
                                 </button>
@@ -145,18 +117,47 @@
                         </div>
                         
                     </div>
-                    <div class="table-responsive">
-                    <table >
-                        <tr *ngFor="let dat of datas | keyvalue">
-                            <td>{{dat.key}}</td>
-                            <td>{{dat.value}}</td>
-                        </tr>
-                    </table>
+                    <div class="col-md-8 mt-4 mb-4">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>-id</th>
+                                    <th>AlternateInsert</th>
+                                    <th>Bar</th>
+                                    <th>Component Name</th>
+                                    <th>Drawingnumber</th>
+                                    <th>EdgeLife</th>
+                                    <th>InsertLife</th>
+                                    <th>Insert Spec</th>
+                                    <th>Make</th>
+                                    <th>Material</th>
+                                    <th>noofedge</th>
+                                    <th>noofedgeforalternative</th>
+                                    <th>opn</th>
+                                    <th>partname</th>
+                                    <th>rate</th>
+                                    <th>sequencename</th>
+                                    <th>sno</th>
+                                    <th>supplier</th>
+                
+                                </tr>
+
+                                <tbody>
+                                    <div *ngFor="let x of datas;let i=index">
+                                    <tr *ngFor="let dat of x | keyvalue">
+                                        <td><span>{{dat.value}}</span></td>
+
+                                    </tr>
+                                </div>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
+                    
                 </div>
 
             </div>
-        </div>
+       
         </div>    
        
     </body>
