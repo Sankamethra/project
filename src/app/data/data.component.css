@@ -1,5 +1,12 @@
-table,th,td{
-    border: 1px solid;
+@import url('../app.component.css');
+
+table,th,td,tr{
+    border: 1px solid #777;
     border-collapse: collapse;
     width: 100px;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+
+
 }

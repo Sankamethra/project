@@ -14,6 +14,7 @@ import { UpdateComponent } from './update/update.component';
 import { GridComponent } from './grid/grid.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { GridComponent } from './grid/grid.component';
     DataComponent,
     UpdateComponent,
     GridComponent,
+    
   ],
   imports: [
     BrowserModule,

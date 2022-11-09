@@ -7,13 +7,15 @@ import { UpdateComponent } from './update/update.component';
 import { UploadComponent } from './upload/upload.component';
 import { GridComponent } from './grid/grid.component';
 
+
 const routes: Routes = [
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"upload",component:UploadComponent},
   {path:"data",component:DataComponent},
   {path:"update",component:UpdateComponent},
-  {path: "grid", component: GridComponent}
+  {path: "grid", component: GridComponent},
+  
 ];
 
 @NgModule({

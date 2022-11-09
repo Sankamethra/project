@@ -1,3 +1,5 @@
+@import url('../app.component.css');
+
 table,th,td{
     border: 1px solid;
     border-collapse: collapse;
