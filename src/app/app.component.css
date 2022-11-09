@@ -9,3 +9,13 @@
     font-family:Georgia, 'Times New Roman', Times, serif;
     text-decoration-color: black;
 }
+
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  

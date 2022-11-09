@@ -12,6 +12,7 @@ import { UploadComponent } from './upload/upload.component';
 import { DataComponent } from './data/data.component';
 import { UpdateComponent } from './update/update.component';
 import { GridComponent } from './grid/grid.component';
+import { StartComponent } from './start/start.component';
 
 
 
@@ -24,6 +25,7 @@ import { GridComponent } from './grid/grid.component';
     DataComponent,
     UpdateComponent,
     GridComponent,
+    StartComponent,
     
   ],
   imports: [

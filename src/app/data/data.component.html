@@ -13,7 +13,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" >
                     
                     <div class="sidebar-brand-text mx-3">Sakthi Group</div>
                 </a>
@@ -117,38 +117,49 @@
                         </div>
                         
                     </div>
-                    <div class="col-md-8 mt-4 mb-4">
+                    <div class="table-responsive">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>-id</th>
-                                    <th>AlternateInsert</th>
-                                    <th>Bar</th>
-                                    <th>Component Name</th>
                                     <th>Drawingnumber</th>
-                                    <th>EdgeLife</th>
-                                    <th>InsertLife</th>
-                                    <th>Insert Spec</th>
-                                    <th>Make</th>
-                                    <th>Material</th>
-                                    <th>noofedge</th>
-                                    <th>noofedgeforalternative</th>
-                                    <th>opn</th>
+                                    <th>Component Name</th>
                                     <th>partname</th>
-                                    <th>rate</th>
+                                    <th>Material</th>
                                     <th>sequencename</th>
-                                    <th>sno</th>
+                                    <th>opn</th>
+                                    <th>Bar</th>
+                                    <th>Insert Spec</th>
+                                    <th>noofedge</th>
+                                    <th>EdgeLife</th>
+                                    <th>Make</th>
                                     <th>supplier</th>
-                
+                                    <th>rate</th>
+                                    <th>InsertLife</th>
+                                    <th>AlternateInsert</th>
+                                    <th>noofedgeforalternative</th>
+ 
+                                    
                                 </tr>
 
-                                <tbody>
-                                    <div *ngFor="let x of datas;let i=index">
-                                    <tr *ngFor="let dat of x | keyvalue">
-                                        <th><span>{{dat.value}}</span></th>
-
-                                    </tr>
-                                </div>
-                                </tbody>
+                                        <tr *ngFor="let dat of datas;let i=index">
+                                            <td>{{dat.drawingnumber}}</td>
+                                            <td>{{dat.componentname}}</td>
+                                            <td>{{dat.partname}}</td>
+                                            <td>{{dat.material}}</td>
+                                            <td>{{dat.sequencename}}</td>
+                                            <td>{{dat.opn}}</td>
+                                            <td>{{dat.bar}}</td>
+                                            <td>{{dat.insertspec}}</td>
+                                            <td>{{dat.noofedge}}</td>
+                                            <td>{{dat.edgelife}}</td>
+                                            <td>{{dat.make}}</td>
+                                            <td>{{dat.supplier}}</td>
+                                            <td>{{dat.rate}}</td>
+                                            <td>{{dat.insertlife}}</td>
+                                            <td>{{dat.alternateinsert}}</td>                                            
+                                            <td>{{dat.noofedgeforalternative}}</td>
+                                          
+                                        </tr>
+                                
                             </table>
                         </div>
 

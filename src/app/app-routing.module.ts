@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { UpdateComponent } from './update/update.component';
 import { UploadComponent } from './upload/upload.component';
 import { GridComponent } from './grid/grid.component';
+import { StartComponent } from './start/start.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"data",component:DataComponent},
   {path:"update",component:UpdateComponent},
   {path: "grid", component: GridComponent},
+  {path: "start", component: StartComponent},
   
 ];
 

@@ -13,7 +13,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" >
                     
                     <div class="sidebar-brand-text mx-3">Sakthi Group</div>
                 </a>
@@ -118,42 +118,54 @@
                                
                             </div>
                         </div>
-                        <div class="col-md-8 mt-4 mb-4">
+                        <div class="table-responsive">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>-id</th>
-                                    <th>AlternateInsert</th>
-                                    <th>Bar</th>
-                                    <th>Component Name</th>
                                     <th>Drawingnumber</th>
-                                    <th>EdgeLife</th>
-                                    <th>InsertLife</th>
-                                    <th>Insert Spec</th>
-                                    <th>Make</th>
-                                    <th>Material</th>
-                                    <th>noofedge</th>
-                                    <th>noofedgeforalternative</th>
-                                    <th>opn</th>
+                                    <th>Component Name</th>
                                     <th>partname</th>
-                                    <th>rate</th>
+                                    <th>Material</th>
                                     <th>sequencename</th>
-                                    <th>sno</th>
+                                    <th>opn</th>
+                                    <th>Bar</th>
+                                    <th>Insert Spec</th>
+                                    <th>noofedge</th>
+                                    <th>EdgeLife</th>
+                                    <th>Make</th>
                                     <th>supplier</th>
-                
+                                    <th>rate</th>
+                                    <th>InsertLife</th>
+                                    <th>AlternateInsert</th>
+                                    <th>noofedgeforalternative</th>
+ 
+                                    
                                 </tr>
 
-                                <tbody>
-                                    <div *ngFor="let x of datas;let i=index">
-                                    <tr *ngFor="let dat of x | keyvalue">
-                                        <td><span>{{dat.value}}</span></td>
-
-                                    </tr>
-                                </div>
-                                </tbody>
+                                        <tr *ngFor="let dat of datas;let i=index">
+                                            <td>{{dat.drawingnumber}}</td>
+                                            <td>{{dat.componentname}}</td>
+                                            <td>{{dat.partname}}</td>
+                                            <td>{{dat.material}}</td>
+                                            <td>{{dat.sequencename}}</td>
+                                            <td>{{dat.opn}}</td>
+                                            <td>{{dat.bar}}</td>
+                                            <td>{{dat.insertspec}}</td>
+                                            <td>{{dat.noofedge}}</td>
+                                            <td>{{dat.edgelife}}</td>
+                                            <td>{{dat.make}}</td>
+                                            <td>{{dat.supplier}}</td>
+                                            <td>{{dat.rate}}</td>
+                                            <td>{{dat.insertlife}}</td>
+                                            <td>{{dat.alternateinsert}}</td>                                            
+                                            <td>{{dat.noofedgeforalternative}}</td>
+                                          
+                                        </tr>
+                               
                             </table>
                         </div>
 
                     </div>
+                    <br><br>
 
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -165,10 +177,13 @@
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Select Update Field</h6>
-
-                                        <div>
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Select the field</h6>
+                                    <br>
+                                    <div>
+                                        <!-- Topbar Search -->
+                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                          <div class="input-group">
                                             <select id="exampleInputPassword1" class="form-control" >
                                                 <option  value="">Select the Field Name</option>
                                                 <option name="insertlife" value="insertlife">Insertlife</option>
@@ -176,20 +191,17 @@
                                                 <option name="noofedgeforalternativenew" value="noofedgeforalternative">noofedgeforalternative</option>
                                                 
                                             </select>
+                                            </div>
+                                       </form>
+                                    </div>
+                                </div><br>
 
-                                           
-
-                                            <div class="input-group">
-                                                <input [(ngModel)]="data.drawingnumber" type="text" name="sequencename" class="form-control bg-light border-0 small" placeholder="Enter Here.."  aria-label="Search" aria-describedby="basic-addon2"required><br/>
-                                             </div>
-
-                                             <button style="margin-left: 670px" type="button" class="btn btn-primary" >
+                                        <div>
+                                             <button style="margin-left: 700px" type="button" class="btn btn-primary" >
                                                 Update
                                             </button>
 
-                                        </div>
-                                        <br>
-                                       
+                                        </div>                                       
                                     </div>
                 
 
