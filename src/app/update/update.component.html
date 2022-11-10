@@ -86,123 +86,208 @@
 
                 </nav>
 
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Get Data</h1>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Enter Drawing Number</h6>
-                                    <br>
-                                    <div>
-                                        <!-- Topbar Search -->
-                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                          <div class="input-group">
-                                               <input [(ngModel)]="data.drawingnumber" type="text" name="drawingnumber" class="form-control bg-light border-0 small" placeholder="Enter Here.."  aria-label="Search" aria-describedby="basic-addon2"required><br/>
-                                            </div>
-                                       </form>
-                                    </div>
-                                </div>
-
-
-                            
-
-                                <button (click)="existdata()" style="margin-left: 670px" type="button" class="btn btn-primary" >
-                                    Get
-                                </button>
-                               
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th>Drawingnumber</th>
-                                    <th>Component Name</th>
-                                    <th>partname</th>
-                                    <th>Material</th>
-                                    <th>sequencename</th>
-                                    <th>opn</th>
-                                    <th>Bar</th>
-                                    <th>Insert Spec</th>
-                                    <th>noofedge</th>
-                                    <th>EdgeLife</th>
-                                    <th>Make</th>
-                                    <th>supplier</th>
-                                    <th>rate</th>
-                                    <th>InsertLife</th>
-                                    <th>AlternateInsert</th>
-                                    <th>noofedgeforalternative</th>
- 
-                                    
-                                </tr>
-
-                                        <tr *ngFor="let dat of datas;let i=index">
-                                            <td>{{dat.drawingnumber}}</td>
-                                            <td>{{dat.componentname}}</td>
-                                            <td>{{dat.partname}}</td>
-                                            <td>{{dat.material}}</td>
-                                            <td>{{dat.sequencename}}</td>
-                                            <td>{{dat.opn}}</td>
-                                            <td>{{dat.bar}}</td>
-                                            <td>{{dat.insertspec}}</td>
-                                            <td>{{dat.noofedge}}</td>
-                                            <td>{{dat.edgelife}}</td>
-                                            <td>{{dat.make}}</td>
-                                            <td>{{dat.supplier}}</td>
-                                            <td>{{dat.rate}}</td>
-                                            <td>{{dat.insertlife}}</td>
-                                            <td>{{dat.alternateinsert}}</td>                                            
-                                            <td>{{dat.noofedgeforalternative}}</td>
-                                          
-                                        </tr>
-                               
-                            </table>
-                        </div>
-
-                    </div>
-                    <br><br>
-
+               
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Update Data</h1>
                         </div>
-
                         <div class="row">
+
+                            <!-- Area Chart -->
                             <div class="col-xl-8 col-lg-7">
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Select the field</h6>
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <br>
+                                        <div>
+                                        
+                                        </div>
+                                    </div>
                                     <br>
                                     <div>
-                                        <!-- Topbar Search -->
-                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                                          <div class="input-group">
-                                            <select id="exampleInputPassword1" class="form-control" >
-                                                <option  value="">Select the Field Name</option>
-                                                <option name="insertlife" value="insertlife">Insertlife</option>
-                                                <option name="ratenew" value="rate">rate</option>
-                                                <option name="noofedgeforalternativenew" value="noofedgeforalternative">noofedgeforalternative</option>
-                                                
-                                            </select>
+                                        <form>
+                                            <div class="form-group" >
+                                              <label for="exampleInputPassword1" >Part Name</label>
+                                              <select id="exampleInputPassword1" class="form-control"  >
+                                                <option *ngFor="let dat of datas;let i=index" value="">{{dat.partname}}Select the Part Name</option>
+                                                <option value="1P  DN100RB CL150 BODY">1P  DN100RB CL150 BODY</option>
+                                                <option value="1P DN 100 RB CL 300 BODY ">1P DN 100 RB CL 300 BODY </option>
+                                                <option value="1P DN 80 RB CL 150 BODY">1P DN 80 RB CL 150 BODY</option>
+                                                <option value="1P DN 80 RB CL 300 BODY">1P DN 80 RB CL 300 BODY</option>
+                                                <option value="1P DN150RB CL150 BODY">1P DN150RB CL150 BODY</option>
+                                                <option value="1P DN150RB CL300 BODY">1P DN150RB CL300 BODY</option>
+                                                <option value="1P DN15FB CL150 BODY">1P DN15FB CL150 BODY</option>
+                                                <option value="1P DN15FB CL300 BODY">1P DN15FB CL300 BODY</option>
+                                                <option value="1P DN20RB CL150 BODY">1P DN20RB CL150 BODY</option>
+                                                <option value="1P DN20RB CL300 BODY">1P DN20RB CL300 BODY</option>
+                                                <option value="1P DN40RB CL300 BODY">1P DN40RB CL300 BODY</option>
+                                                <option value="1P DN50FB CL300 BODY">1P DN50FB CL300 BODY</option>
+                                                <option value="1P DN50RB CL150 BODY">1P DN50RB CL150 BODY</option>
+                                                <option value="1P DN65RB CL150 BODY"> 1P DN65RB CL150 BODY</option>
+                                                <option value="1P DN65RB CL300 BODY"> 1P DN65RB CL300 BODY</option>
+                                                <option value="1PDN25RB CL150 BODY">1PDN25RB CL150 BODY</option>
+                                                <option value="1PDN25RB CL300 BODY">1PDN25RB CL300 BODY</option>
+                                                <option value="1PDN40RB CL150 BODY">1PDN40RB CL150 BODY</option>
+                                                <option value="2P DN 15 FB CL150 CONNECTOR"> 2P DN 15 FB CL150 CONNECTOR</option>
+                                                <option value="2P DN15FB CL150 BODY ">2P DN15FB CL150 BODY </option>
+                                                <option value="2P DN20FB  CL300 BODY">2P DN20FB  CL300 BODY</option>
+                                                <option value="2P DN20FB CL150 BODY">2P DN20FB CL150 BODY</option>
+                                                <option value="2P DN20FB CLASS 300 CONNECTOR">2P DN20FB CLASS 300 CONNECTOR</option>
+                                                <option value="2P DN25FB CL150 BODY">2P DN25FB CL150 BODY</option>
+                                                <option value="2P DN25FB CL150 CONNECTOR">2P DN25FB CL150 CONNECTOR</option>
+                                                <option value="2P DN25FB CL300 BODY">2P DN25FB CL300 BODY</option>
+                                                <option value="2P DN25FB CL300 CONNECTOR">2P DN25FB CL300 CONNECTOR</option>
+                                                <option value="2PDN15FB CL300 BODY ">2PDN15FB CL300 BODY </option>
+                                                <option value="2PDN15FB CL300 CONNECTOR">2PDN15FB CL300 CONNECTOR</option>
+                                                <option value="2PDN20FB CL150 CONNECTOR">2PDN20FB CL150 CONNECTOR</option>
+                                                                                       
+                                                <option value="">None</option>
+                                              </select>
+                                              
                                             </div>
-                                       </form>
+                                            <div class="form-group"> 
+                                              <label for="exampleInputPassword1">Material</label>
+                                              <select id="exampleInputPassword1" class="form-control" >
+                                                <option value="">Select the Material</option>
+                                                <option value="CF8M">CF8M</option>
+                                                <option value="CF8M SAND">CF8M SAND</option>
+                                                <option value="">None</option>
+                                              </select>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Sequence Name</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Sequence</option>
+                                                    <option value="BORE FINISHING">BORE FINISHING</option>
+                                                    <option value="OD FINISHING">OD FINISHING</option>
+                                                    <option value="OD ROUGHING">OD ROUGHING</option>
+                                                    <option value="THREADING">THREADING</option>
+                                                    <option value="">None</option>
+                                                </select>
+                                              </div>
+    
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Operation</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Operation</option>
+                                                    <option value="N2">N2</option>
+                                                    <option value="N3">N3</option>
+                                                    <option value="N4">N4</option>
+                                                    <option value="N5">N5</option>
+                                                    <option value="N7">N7</option>
+                                                    <option value="N8">N8</option>
+                                                    <option value="">None</option>
+                                                  </select>
+                                            </div>
+    
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Bar</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Options</option>
+                                                    <option value="ECLNR 2525-M12 ">ECLNR 2525-M12 </option>
+                                                    <option value=" ETJNR 2525-M12"> ETJNR 2525-M12</option>
+                                                   
+                                                    
+                                                    <option value="">None</option>
+                                                  </select>
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">InsertSpec</label>
+                                                
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Options</option>
+                                                    <option value="CCMT 09T308 HQ PR1125">CCMT 09T308 HQ PR1125</option>
+                                                    <option value="CNMG120408-M3 35MT">CNMG120408-M3 35MT</option>
+                                                    <option value="TNMG 160404 BM FQQ (2319)7125">TNMG 160404 BM FQQ (2319)7125</option>
+                                                    
+                                                    <option value="">None</option>
+                                                  </select>
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Number of Edge</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select Number of Edge</option>
+                                                    <option value="2">2</option>
+                                                    <option value="4">4</option>
+                                                    <option value="6">6</option>
+                                                    
+                                                    <option value="">None</option>
+                                                  </select>
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Edge Life</label>
+                                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter the edge life">
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Make</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Options</option>
+                                                    <option value="Q & Q">Q & Q</option>
+                                                    <option value="SECCO">SECCO</option>
+                                                    <option value="KYOCERA">KYOCERA</option>
+                                                    
+                                                    <option value="">None</option>
+                                                  </select>
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Supplier</label>
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Supplier</option>
+                                                    <option value="Q&Q SOLUTIONS">Q&Q SOLUTIONS</option>
+                                                    <option value="SRI MAHAGANAPATHY MARKETING">SRI MAHAGANAPATHY MARKETING</option>
+                                                    <option value="M.K. TOOLING">M.K. TOOLING</option>
+                                                    
+                                                    <option value="">None</option>
+                                                  </select>
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Rate</label>
+                                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter the Rate">
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1">Insert Life (Must be in number)</label>
+                                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Insert Life">
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1" >Enter Alternative Insert </label>
+                                                                                           
+                                                <select id="exampleInputPassword1" class="form-control" >
+                                                    <option value="">Select the Insert</option>
+                                                    <option value="16 IR AG 60 AH725">16 IR AG 60 AH725</option>
+                                                    <option value="CCMT 09T304 PS T9125">CCMT 09T304 PS T9125</option>
+                                                    <option value="CCMT 09T308 TS 9125">CCMT 09T308 TS 9125</option>
+                                                    <option value="CNMG 120404N-GU A1464">CNMG 120404N-GU A1464</option>
+                                                    <option value="CNMG 120408 8125">CNMG 120408 8125</option>
+                                                    <option value="CNMG 120408 MS PR1125">CNMG 120408 MS PR1125</option>
+                                                    <option value="CNMG 120412 1464">CNMG 120412 1464</option>
+                                                    <option value="TNMG 160404 BM FQQ (2319)7125">TNMG 160404 BM FQQ (2319)7125</option>
+                                                    <option value="">None</option>
+                                                  </select>
+                                                
+                                              </div>
+    
+                                              <div class="form-group">
+                                                <label for="exampleInputPassword1" >No of Edge for Alternative Insert  (Must not be greater than 6)</label>
+                                                <input type="number" min="1" max="6" class="form-control" id="exampleInputPassword1" placeholder="Enter the number of edge">
+                                                
+                                              </div>
+    
+                                            <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
+                                        </form>
                                     </div>
-                                </div><br>
+                                </div>
 
-                                        <div>
-                                             <button style="margin-left: 700px" type="button" class="btn btn-primary" >
-                                                Update
-                                            </button>
 
-                                        </div>                                       
-                                    </div>
                 
 
                 

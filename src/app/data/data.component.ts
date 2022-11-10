@@ -8,6 +8,7 @@ import { AuthenticateService } from '../authenticate.service';
 export class DataComponent implements OnInit {
   public data:any={}
   public datas:any=[]
+  public upddat:any={}
 
   constructor(private auth:AuthenticateService) { }
 
@@ -24,4 +25,5 @@ export class DataComponent implements OnInit {
 
   }
 
+ 
 }
