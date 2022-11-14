@@ -19,7 +19,9 @@ export class RegisterComponent implements OnInit {
     this.auth.register(this.data).subscribe((res:any)=>{
       this.datas=res
       console.log(this.datas)
-      this.route.navigate(['/login'])
+      setInterval(()=>{this.route.navigate(['/login'])},3000
+      )
+      
 
     })
 

@@ -112,6 +112,7 @@ router.post('/getdata',(req,res)=>{
 
 })
 
+
 router.post('/getupdate',(req,res)=>{
     let data=req.body
     let filter={drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}
