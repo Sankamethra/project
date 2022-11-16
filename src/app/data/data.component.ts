@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticateService } from '../authenticate.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
@@ -8,7 +11,7 @@ import { AuthenticateService } from '../authenticate.service';
 export class DataComponent implements OnInit {
   public data:any={}
   public datas:any=[]
-  public upddat:any={}
+
 
   constructor(private auth:AuthenticateService) { }
 
@@ -23,8 +26,6 @@ export class DataComponent implements OnInit {
 
     })
 
-  }
+  } 
 
-  
- 
 }

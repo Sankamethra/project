@@ -112,6 +112,14 @@ router.post('/getdata',(req,res)=>{
 
 })
 
+router.get('/getdatanew',(req,res)=>{
+    let data=req.body
+    d.collection("new").find({drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}).toArray((err,dat)=>{
+        res.send(JSON.stringify(dat)).status(200)
+    })
+
+
+})
 
 router.post('/getupdate',(req,res)=>{
     let data=req.body
@@ -120,63 +128,63 @@ router.post('/getupdate',(req,res)=>{
      if(data.drawingnumbernew){
         newobj={$set:{drawingnumber:data.drawingnumbernew}}
      }else{
-        if(data.componentnamenew){
-            newobj={$set:{componentname:data.componentnamenew}}
+        if(getdatanew.componentnamenew){
+            newobj={$set:{componentname:getdatanew.componentnamenew}}
         }
         else{
-            if(data.partnamenew){
-                newobj={$set:{partname:data.partnamenew}}
+            if(getdatanew.partnamenew){
+                newobj={$set:{partname:getdatanew.partnamenew}}
             }else{
-                if(data.materialnew){ 
-                    newobj={$set:{material:data.materialnew}}                      
+                if(getdatanew.materialnew){ 
+                    newobj={$set:{material:getdatanew.materialnew}}                      
 
                 }else{
-                    if(data.sequencenamenew){
-                        newobj={$set:{sequencename:data.sequencenamenew}}
+                    if(getdatanew.sequencenamenew){
+                        newobj={$set:{sequencename:getdatanewsequencenamenew}}
 
                     }else{
-                        if(data.opnnew){
-                            newobj={$set:{opn:data.opnnew}}
+                        if(getdatanew.opnnew){
+                            newobj={$set:{opn:getdatanew.opnnew}}
 
                         }else{
-                            if(data.barnew){
-                                newobj={$set:{bar:data.barnew}}
+                            if(getdatanew.barnew){
+                                newobj={$set:{bar:getdatanew.barnew}}
 
                             }else{
-                                if(data.insertspecnew){
-                                    newobj={$set:{insertspec:data.insertspecnew}}
+                                if(getdatanew.insertspecnew){
+                                    newobj={$set:{insertspec:getdatanewinsertspecnew}}
 
                                 }else{
-                                    if(data.noofedgenew){
-                                        newobj={$set:{noofedge:data.noofedgenew}}
+                                    if(getdatanew.noofedgenew){
+                                        newobj={$set:{noofedge:getdatanew.noofedgenew}}
 
                                     }else{
-                                        if(data.edgelifenew){
-                                            newobj={$set:{edgelife:data.edgelifenew}}
+                                        if(getdatanew.edgelifenew){
+                                            newobj={$set:{edgelife:getdatanew.edgelifenew}}
 
                                         }else{
-                                            if(data.makenew){
-                                                newobj={$set:{make:data.makenew}}
+                                            if(getdatanew.makenew){
+                                                newobj={$set:{make:getdatanew.makenew}}
 
                                             }else{
-                                                if(data.suppliernew){
-                                                    newobj={$set:{supplier:data.suppliernew}}
+                                                if(getdatanew.suppliernew){
+                                                    newobj={$set:{supplier:getdatanew.suppliernew}}
 
                                                 }else{
-                                                    if(data.ratenew){
-                                                        newobj={$set:{rate:data.ratenew}}
+                                                    if(getdatanew.ratenew){
+                                                        newobj={$set:{rate:getdatanew.ratenew}}
 
                                                     }else{
-                                                        if(data.insertlifenew){
-                                                            newobj={$set:{insertlife:data.insertlifenew}}
+                                                        if(getdatanew.insertlifenew){
+                                                            newobj={$set:{insertlife:getdatanew.insertlifenew}}
 
                                                         }else{
-                                                            if(data.alternateinsertnew){
-                                                                newobj={$set:{alternateinsert:data.alternatenew}}
+                                                            if(getdatanew.alternateinsertnew){
+                                                                newobj={$set:{alternateinsert:getdatanew.alternatenew}}
 
                                                             }else{
-                                                                if(data.noofedgeforalternativenew){
-                                                                    newobj={$set:{noofedgeforalternative:data.noofedgeforalternativenew}}
+                                                                if(getdatanew.noofedgeforalternativenew){
+                                                                    newobj={$set:{noofedgeforalternative:getdatanew.noofedgeforalternativenew}}
                                                                 }else{
                                                                     
                                                                 }

@@ -10,6 +10,25 @@ export class UpdateComponent implements OnInit {
   public datas:any={}
   public upddat:any={}
 
+  getdatanew = {
+    drawingnumber : "",
+    componentname : "",
+    partname : "",
+    material : "",
+    sequencename : "",
+    opn : "",
+    bar : "",
+    insertspec : "",
+    edge : "",
+    edgelife : "",
+    make : "",
+    supplier : "",
+    rate : "",
+    insertlife : "",
+    alternativeedge : "",
+    noofedgeforalternative : ""
+  }
+
   constructor(private auth:AuthenticateService) { }
 
   ngOnInit(): void {
@@ -17,16 +36,24 @@ export class UpdateComponent implements OnInit {
 
   update(){
     console.log(this.data)
-    this.auth.getupdate(this.data).subscribe((res)=>{
+    this.auth.getupdate(this.getdatanew).subscribe((res)=>{
       this.upddat=res
     })
   }
-  existdata(){
+
+  get(){
     console.log(this.data)
-    this.auth.getdata(this.data).subscribe((res)=>{
+    this.auth.getdata(this.data).subscribe((res:any)=>{
+      console.log(res)
       this.datas=res
+
     })
 
+  } 
+
+  getnew(dat: any){
+    this.getdatanew=dat;
   }
+
 
 }

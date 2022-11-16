@@ -10,6 +10,7 @@ import { StartComponent } from './start/start.component';
 
 
 const routes: Routes = [
+  {path:'', redirectTo :'/start', pathMatch: "full"},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
   {path:"upload",component:UploadComponent},

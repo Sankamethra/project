@@ -86,35 +86,142 @@
 
                 </nav>
 
+                <div class="row">
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Enter Drawing Number</h6>
+                                    <br>
+                                    <div>
+                                        <!-- Topbar Search -->
+                                      <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                          <div class="input-group">
+                                               <input [(ngModel)]="data.drawingnumber" type="text" name="drawingnumber" class="form-control bg-light border-0 small" placeholder="Enter Here.."  aria-label="Search" aria-describedby="basic-addon2"required><br/>
+                                            </div>
+                                       </form>
+                                    </div>
+                                </div>
+
+                                <button (click)="get()" style="margin-left: 670px" type="button" class="btn btn-primary" >
+                                    Get
+                                </button>
+                               
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>Drawingnumber</th>
+                                    <th>Component Name</th>
+                                    <th>partname</th>
+                                    <th>Material</th>
+                                    <th>sequencename</th>
+                                    <th>opn</th>
+                                    <th>Bar</th>
+                                    <th>Insert Spec</th>
+                                    <th>noofedge</th>
+                                    <th>EdgeLife</th>
+                                    <th>Make</th>
+                                    <th>supplier</th>
+                                    <th>rate</th>
+                                    <th>InsertLife</th>
+                                    <th>AlternateInsert</th>
+                                    <th>noofedgeforalternative</th>
+ 
+                                    
+                                </tr>
+
+                                        <tr *ngFor="let dat of datas;let i=index">
+                                            <td>{{dat.drawingnumber}}</td>
+                                            <td>{{dat.componentname}}</td>
+                                            <td>{{dat.partname}}</td>
+                                            <td>{{dat.material}}</td>
+                                            <td>{{dat.sequencename}}</td>
+                                            <td>{{dat.opn}}</td>
+                                            <td>{{dat.bar}}</td>
+                                            <td>{{dat.insertspec}}</td>
+                                            <td>{{dat.noofedge}}</td>
+                                            <td>{{dat.edgelife}}</td>
+                                            <td>{{dat.make}}</td>
+                                            <td>{{dat.supplier}}</td>
+                                            <td>{{dat.rate}}</td>
+                                            <td>{{dat.insertlife}}</td>
+                                            <td>{{dat.alternateinsert}}</td>                                            
+                                            <td>{{dat.noofedgeforalternative}}</td>
+                                            <td><button type="button" class="btn btn-primary" (click)="getnew(dat)" >Update</button></td>
+
+                                          
+                                        </tr>
+                                
+                            </table>
+                        </div>
+
+                    </div>
+                    
+                </div>
+        </div>
+        
+
                
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">Update Data</h1>
                         </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1" >Select the Field </label>
-                                    <select id="exampleInputPassword1" class="form-control" >
-                                          <option value="">Select the Field</option>
-                                          <option value="Component Name">Component Name</option>
-                                          <option value="Part Name">Part Name</option>
-                                          <option value="Material">Material</option>
-                                          <option value="Sequence">Sequence</option>
-                                          <option value="OPN">OPN</option>
-                                          <option value="Bar">Bar</option>
-                                          <option value="Insert Spec">Insert Spec</option>
-                                          <option value="Edge">Edge</option>
-                                          <option value="Edge Life">Edge Life</option>
-                                          <option value="Make">Make</option>
-                                          <option value="Supplier">Supplier</option>
-                                          <option value="Rate">Rate</option>
-                                          <option value="Insert Life">Insert Life</option>
-                                          <option value="Alternative Edge">Alternative Edge</option>
-                                          <option value="noofedgeforalternative">noofedgeforalternative</option>                                                    
-                                          <option value="">None</option>
-                                     </select>
-                                     <br>
-                                     <input type="text"  class="form-control" placeholder="Enter the value">
-                                              </div>
+                            <div class="form-group"> 
+                                
+                                <label for="exampleInputPassword1" >Drawingnumber </label>
+                                <input type="text" [(ngModel)]="data.drawingnumber" class="form-control" name="drawingnumber">
+
+                                <label for="exampleInputPassword1" >Component Name </label>
+                                <input type="text" [(ngModel)]="getdatanew.componentname" class="form-control" name="componentname">
+
+                                <label for="exampleInputPassword1" >Part Name </label>
+                                <input type="text" [(ngModel)]="getdatanew.partname" class="form-control" name="partname">
+
+                                <label for="exampleInputPassword1" >Material </label>
+                                <input type="text" [(ngModel)]="getdatanew.material" class="form-control" name="material">
+
+                                <label for="exampleInputPassword1" >Sequence </label>
+                                <input type="text" [(ngModel)]="getdatanew.sequencename" class="form-control" name="sequencename">
+
+                                <label for="exampleInputPassword1" >OPN </label>
+                                <input type="text" [(ngModel)]="getdatanew.opn" class="form-control" name="opn">
+
+                                <label for="exampleInputPassword1" >Bar </label>
+                                <input type="text"  [(ngModel)]="getdatanew.bar" class="form-control" name="bar">
+
+                                <label for="exampleInputPassword1" >Insert Spec </label>
+                                <input type="text"  [(ngModel)]="getdatanew.insertspec" class="form-control" name="insertspec">
+
+                                <label for="exampleInputPassword1" >Edge</label>
+                                <input type="text"   [(ngModel)]="getdatanew.edge" class="form-control" name="edge">
+
+                                <label for="exampleInputPassword1" >Edge Life </label>
+                                <input type="text"  [(ngModel)]="getdatanew.edgelife" class="form-control" name="edgelife">
+                                
+                                <label for="exampleInputPassword1" >Make</label>
+                                <input type="text"   [(ngModel)]="getdatanew.make" class="form-control" name="make">
+
+                                <label for="exampleInputPassword1" >Supplier </label>
+                                <input type="text"  [(ngModel)]="getdatanew.supplier" class="form-control" name="supplier">
+
+                                <label for="exampleInputPassword1" >Rate </label>
+                                <input type="text"  [(ngModel)]="getdatanew.rate"  class="form-control" name="rate">
+
+                                <label for="exampleInputPassword1" >Insert Life </label>
+                                <input type="text"  [(ngModel)]="getdatanew.insertlife" class="form-control" name="insertlife">
+
+                                <label for="exampleInputPassword1" >Alternative Edge </label>
+                                <input type="text"  [(ngModel)]="getdatanew.alternativeedge" class="form-control" name="alternativeedge">
+
+                                <label for="exampleInputPassword1" >noofedgeforalternative </label>
+                                <input type="text"  [(ngModel)]="getdatanew.noofedgeforalternative" class="form-control" name="noofedgeforalternative">
+                                         
+                                          
     
                                             <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
                                         
