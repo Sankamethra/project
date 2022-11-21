@@ -8,6 +8,8 @@ import { AuthenticateService } from '../authenticate.service';
 export class UploadComponent implements OnInit {
   public files:any
   public filedata:any
+  alert:boolean=false
+
   public values:any=[{
     drawingnumber:String,
     componentname:String
@@ -34,10 +36,14 @@ export class UploadComponent implements OnInit {
         this.filedata=JSON.stringify(res)
         this.values=this.filedata
         console.log("Response data type::",typeof(this.filedata))
+        this.alert=true
 
       })
   
 
+    }
+    closeAlert(){
+      this.alert=false
     }
 
 }

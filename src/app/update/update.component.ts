@@ -3,31 +3,14 @@ import { AuthenticateService } from '../authenticate.service';
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  styleUrls: ['./update.component.css'],
+  
 })
 export class UpdateComponent implements OnInit {
   public data:any={}
   public datas:any={}
   public upddat:any={}
-
-  getdatanew = {
-    drawingnumber : "",
-    componentname : "",
-    partname : "",
-    material : "",
-    sequencename : "",
-    opn : "",
-    bar : "",
-    insertspec : "",
-    edge : "",
-    edgelife : "",
-    make : "",
-    supplier : "",
-    rate : "",
-    insertlife : "",
-    alternativeedge : "",
-    noofedgeforalternative : ""
-  }
+  
 
   constructor(private auth:AuthenticateService) { }
 
@@ -36,7 +19,7 @@ export class UpdateComponent implements OnInit {
 
   update(){
     console.log(this.data)
-    this.auth.getupdate(this.getdatanew).subscribe((res)=>{
+    this.auth.getupdate(this.data).subscribe((res)=>{
       this.upddat=res
     })
   }
@@ -51,8 +34,22 @@ export class UpdateComponent implements OnInit {
 
   } 
 
-  getnew(dat: any){
-    this.getdatanew=dat;
+  existdata(){
+    console.log(this.data)
+    this.auth.getdatanew(this.data).subscribe((res:any)=>{
+      console.log(res)
+      this.datas=res
+    })
+
+  }
+
+  display = "none";
+ 
+openModal() {
+    this.display = "block";
+  }
+  onCloseHandled() {
+    this.display = "none";
   }
 
 

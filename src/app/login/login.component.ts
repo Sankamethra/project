@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public data:any={}
   public dat:any
+  alert:boolean=false
+
 
   constructor(private auth:AuthenticateService,private route:Router) { }
 
@@ -21,12 +23,17 @@ export class LoginComponent implements OnInit {
       this.dat=res
       console.log(this.dat)
       if(this.dat=="validuser"){
-      this.route.navigate(['/data'])}
-      else{
-        this.dat=JSON.stringify("Invalid credentials")
+        setInterval(()=>{this.route.navigate(['/data'])},4000)
       }
-      
+      else{
+        setInterval(()=>{this.dat=JSON.stringify("Invalid credentials")},4000)
+      } 
+      this.alert=true   
     })
-  }
-
+   
+    // this.data.reset({})
+    }
+   closeAlert(){
+      this.alert=false
+    }
 }

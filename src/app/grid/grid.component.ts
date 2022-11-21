@@ -11,7 +11,7 @@ export class GridComponent implements OnInit {
 
   userForm: FormGroup;
   public listData: any={}
-
+  alert:boolean=false
   public data:any={}
   public gri:any=[]
 
@@ -66,9 +66,13 @@ export class GridComponent implements OnInit {
     this.auth.grid(this.listData).subscribe((res:any)=>{
       this.gri=res
       console.log(this.gri)
+      this.alert=true
 
     })
 
+  }
+  closeAlert(){
+    this.alert=false
   }
 
 }

@@ -31,6 +31,10 @@ export class AuthenticateService {
     return this.http.post<any[]>("http://localhost:3000/api/getdata",data)
   }
   
+  getdatanew(data:any){
+    console.log(data)
+    return this.http.post<any[]>("http://localhost:3000/api/getdatanew",data)
+  }
 
   getupdate(data:any){
     console.log(data)
@@ -42,11 +46,5 @@ export class AuthenticateService {
     return this.http.post<any[]>("http://localhost:3000/api/grid",data)
 
   }
-
-  
-
- 
-
-
 
 }

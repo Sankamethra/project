@@ -100,12 +100,15 @@
                                     <input class="form" type="file" (change)="getfile($event)" accept=".json" />
                                     <button (click)="file()" class="btn btn-primary">Upload</button>
                                     </div>
-                                    
-
-        
-                              
-                                    
                                </form>
+                               <br>
+
+                               <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>File Uploaded Successfully</strong>
+                                <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                               </div>
                                
                             </div>
                         </div>

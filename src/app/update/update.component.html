@@ -4,6 +4,9 @@
         <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -152,7 +155,7 @@
                                             <td>{{dat.insertlife}}</td>
                                             <td>{{dat.alternateinsert}}</td>                                            
                                             <td>{{dat.noofedgeforalternative}}</td>
-                                            <td><button type="button" class="btn btn-primary" (click)="getnew(dat)" >Update</button></td>
+                                            <td><button type="button" (click)="existdata()"  (click)="openModal()" class="btn btn-primary">Edit</button></td>
 
                                           
                                         </tr>
@@ -166,83 +169,81 @@
         </div>
         
 
-               
-                    <div class="container-fluid">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Update Data</h1>
+        <div class="modal"  id="exampleModalScrollable" aria-labelledby="exampleModalScrollableTitle" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                  <div class="modal-content">
+                        <div class="modal-header">  
+                    
+                            <h1 class="h3 mb-0 text-gray-800" class="modal-title">Update Data</h1>
+                            <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button>
+                       
                         </div>
-                            <div class="form-group"> 
+                            <div class="form-group" class="modal-body"> 
                                 
                                 <label for="exampleInputPassword1" >Drawingnumber </label>
-                                <input type="text" [(ngModel)]="data.drawingnumber" class="form-control" name="drawingnumber">
+                                <input type="text" [(ngModel)]="data.drawingnumbernew" class="form-control" name="drawingnumbernew">
 
                                 <label for="exampleInputPassword1" >Component Name </label>
-                                <input type="text" [(ngModel)]="getdatanew.componentname" class="form-control" name="componentname">
+                                <input type="text" [(ngModel)]="data.componentnamenew" class="form-control" name="componentnamenew">
 
                                 <label for="exampleInputPassword1" >Part Name </label>
-                                <input type="text" [(ngModel)]="getdatanew.partname" class="form-control" name="partname">
+                                <input type="text" [(ngModel)]="data.partnamenew" class="form-control" name="partnamenew">
 
                                 <label for="exampleInputPassword1" >Material </label>
-                                <input type="text" [(ngModel)]="getdatanew.material" class="form-control" name="material">
+                                <input type="text" [(ngModel)]="data.materialnew" class="form-control" name="materialnew">
 
                                 <label for="exampleInputPassword1" >Sequence </label>
-                                <input type="text" [(ngModel)]="getdatanew.sequencename" class="form-control" name="sequencename">
+                                <input type="text" [(ngModel)]="data.sequencenamenew" class="form-control" name="sequencenamenew">
 
                                 <label for="exampleInputPassword1" >OPN </label>
-                                <input type="text" [(ngModel)]="getdatanew.opn" class="form-control" name="opn">
+                                <input type="text" [(ngModel)]="data.opnnew" class="form-control" name="opnnew">
 
                                 <label for="exampleInputPassword1" >Bar </label>
-                                <input type="text"  [(ngModel)]="getdatanew.bar" class="form-control" name="bar">
+                                <input type="text"  [(ngModel)]="data.barnew" class="form-control" name="barnew">
 
                                 <label for="exampleInputPassword1" >Insert Spec </label>
-                                <input type="text"  [(ngModel)]="getdatanew.insertspec" class="form-control" name="insertspec">
+                                <input type="text"  [(ngModel)]="data.insertspecnew" class="form-control" name="insertspecnew">
 
                                 <label for="exampleInputPassword1" >Edge</label>
-                                <input type="text"   [(ngModel)]="getdatanew.edge" class="form-control" name="edge">
+                                <input type="text"   [(ngModel)]="data.edgenew" class="form-control" name="edgenew">
 
                                 <label for="exampleInputPassword1" >Edge Life </label>
-                                <input type="text"  [(ngModel)]="getdatanew.edgelife" class="form-control" name="edgelife">
+                                <input type="text"  [(ngModel)]="data.edgelifenew" class="form-control" name="edgelifenew">
                                 
                                 <label for="exampleInputPassword1" >Make</label>
-                                <input type="text"   [(ngModel)]="getdatanew.make" class="form-control" name="make">
+                                <input type="text"   [(ngModel)]="data.makenew" class="form-control" name="makenew">
 
                                 <label for="exampleInputPassword1" >Supplier </label>
-                                <input type="text"  [(ngModel)]="getdatanew.supplier" class="form-control" name="supplier">
+                                <input type="text"  [(ngModel)]="data.suppliernew" class="form-control" name="suppliernew">
 
                                 <label for="exampleInputPassword1" >Rate </label>
-                                <input type="text"  [(ngModel)]="getdatanew.rate"  class="form-control" name="rate">
+                                <input type="text"  [(ngModel)]="data.ratenew"  class="form-control" name="ratenew">
 
                                 <label for="exampleInputPassword1" >Insert Life </label>
-                                <input type="text"  [(ngModel)]="getdatanew.insertlife" class="form-control" name="insertlife">
+                                <input type="text"  [(ngModel)]="data.insertlifenew" class="form-control" name="insertlifenew">
 
                                 <label for="exampleInputPassword1" >Alternative Edge </label>
-                                <input type="text"  [(ngModel)]="getdatanew.alternativeedge" class="form-control" name="alternativeedge">
+                                <input type="text"  [(ngModel)]="data.alternativeedgenew" class="form-control" name="alternativeedgenew">
 
                                 <label for="exampleInputPassword1" >noofedgeforalternative </label>
-                                <input type="text"  [(ngModel)]="getdatanew.noofedgeforalternative" class="form-control" name="noofedgeforalternative">
-                                         
-                                          
-    
-                                            <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
-                                        
+                                <input type="text"  [(ngModel)]="data.noofedgeforalternativenew" class="form-control" name="noofedgeforalternativenew">
+         
+                                <button type="submit" (click)="update()" (click)="onCloseHandled()" class="btn btn-primary">Update</button>
+                               
                                     </div>
                                 </div>
-
-
-                
-
-                
 <br><br><br>
 
-<h2>enter update field</h2>
-<!-- dropdown wants to be placed here -->
-Example(insertlife)[new]:<input [(ngModel)]="data.insertlifenew"  type="text" name="insertlife"><br/>
-Example(rate)[new]:<input [(ngModel)]="data.ratenew"  type="text" name="ratenew"><br/>
-Example(noofedgeforalternative)[new]:<input [(ngModel)]="data.noofedgeforalternativenew"  type="number" name="noofedgeforalternativenew"><br/>
-<button (click)="update()">Update</button>
-<table>
-    <tr *ngFor="let dat of upddat | keyvalue">
-        <td>{{dat.key}}</td>
-        <td>{{dat.value}}</td>
-    </tr>
-</table>
+  
+ 
+                        
+                         
+              
+                   
+</div>  
+<div *ngFor="let dat of upddat | keyvalue">
+    {{dat.key}}:{{dat.value}}
+</div>
+        
+
+

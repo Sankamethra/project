@@ -109,17 +109,16 @@ router.post('/getdata',(req,res)=>{
         res.send(JSON.stringify(dat)).status(200)
     })
 
-
 })
 
-router.get('/getdatanew',(req,res)=>{
+router.post('/getdatanew',(req,res)=>{
     let data=req.body
     d.collection("new").find({drawingnumber:data.drawingnumber,partname:data.partname,sequencename:data.sequencename}).toArray((err,dat)=>{
         res.send(JSON.stringify(dat)).status(200)
     })
 
-
 })
+
 
 router.post('/getupdate',(req,res)=>{
     let data=req.body
@@ -128,63 +127,63 @@ router.post('/getupdate',(req,res)=>{
      if(data.drawingnumbernew){
         newobj={$set:{drawingnumber:data.drawingnumbernew}}
      }else{
-        if(getdatanew.componentnamenew){
-            newobj={$set:{componentname:getdatanew.componentnamenew}}
+        if(data.componentnamenew){
+            newobj={$set:{componentname:data.componentnamenew}}
         }
         else{
-            if(getdatanew.partnamenew){
-                newobj={$set:{partname:getdatanew.partnamenew}}
+            if(data.partnamenew){
+                newobj={$set:{partname:data.partnamenew}}
             }else{
-                if(getdatanew.materialnew){ 
-                    newobj={$set:{material:getdatanew.materialnew}}                      
+                if(data.materialnew){ 
+                    newobj={$set:{material:data.materialnew}}                      
 
                 }else{
-                    if(getdatanew.sequencenamenew){
-                        newobj={$set:{sequencename:getdatanewsequencenamenew}}
+                    if(data.sequencenamenew){
+                        newobj={$set:{sequencename:data.sequencenamenew}}
 
                     }else{
-                        if(getdatanew.opnnew){
-                            newobj={$set:{opn:getdatanew.opnnew}}
+                        if(data.opnnew){
+                            newobj={$set:{opn:data.opnnew}}
 
                         }else{
-                            if(getdatanew.barnew){
-                                newobj={$set:{bar:getdatanew.barnew}}
+                            if(data.barnew){
+                                newobj={$set:{bar:data.barnew}}
 
                             }else{
-                                if(getdatanew.insertspecnew){
-                                    newobj={$set:{insertspec:getdatanewinsertspecnew}}
+                                if(data.insertspecnew){
+                                    newobj={$set:{insertspec:data.insertspecnew}}
 
                                 }else{
-                                    if(getdatanew.noofedgenew){
-                                        newobj={$set:{noofedge:getdatanew.noofedgenew}}
+                                    if(data.noofedgenew){
+                                        newobj={$set:{noofedge:data.noofedgenew}}
 
                                     }else{
-                                        if(getdatanew.edgelifenew){
-                                            newobj={$set:{edgelife:getdatanew.edgelifenew}}
+                                        if(data.edgelifenew){
+                                            newobj={$set:{edgelife:data.edgelifenew}}
 
                                         }else{
-                                            if(getdatanew.makenew){
-                                                newobj={$set:{make:getdatanew.makenew}}
+                                            if(data.makenew){
+                                                newobj={$set:{make:data.makenew}}
 
                                             }else{
-                                                if(getdatanew.suppliernew){
-                                                    newobj={$set:{supplier:getdatanew.suppliernew}}
+                                                if(data.suppliernew){
+                                                    newobj={$set:{supplier:data.suppliernew}}
 
                                                 }else{
-                                                    if(getdatanew.ratenew){
-                                                        newobj={$set:{rate:getdatanew.ratenew}}
+                                                    if(data.ratenew){
+                                                        newobj={$set:{rate:data.ratenew}}
 
                                                     }else{
-                                                        if(getdatanew.insertlifenew){
-                                                            newobj={$set:{insertlife:getdatanew.insertlifenew}}
+                                                        if(data.insertlifenew){
+                                                            newobj={$set:{insertlife:data.insertlifenew}}
 
                                                         }else{
-                                                            if(getdatanew.alternateinsertnew){
-                                                                newobj={$set:{alternateinsert:getdatanew.alternatenew}}
+                                                            if(data.alternateinsertnew){
+                                                                newobj={$set:{alternateinsert:data.alternatenew}}
 
                                                             }else{
-                                                                if(getdatanew.noofedgeforalternativenew){
-                                                                    newobj={$set:{noofedgeforalternative:getdatanew.noofedgeforalternativenew}}
+                                                                if(data.noofedgeforalternativenew){
+                                                                    newobj={$set:{noofedgeforalternative:data.noofedgeforalternativenew}}
                                                                 }else{
                                                                     
                                                                 }
@@ -219,6 +218,7 @@ router.post('/getupdate',(req,res)=>{
     })
 
 })
+
 
 router.post('/grid',(req,res)=>{
     let data=req.body

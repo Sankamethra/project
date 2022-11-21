@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   public data:any={}
   public datas:any=[]
+  alert:boolean=false
 
   constructor(private auth:AuthenticateService,private route:Router) { }
 
@@ -21,11 +22,12 @@ export class RegisterComponent implements OnInit {
       console.log(this.datas)
       setInterval(()=>{this.route.navigate(['/login'])},3000
       )
-      
+      this.alert=true
 
     })
-    
-  
 
+  }
+  closeAlert(){
+    this.alert=false
   }
 }
